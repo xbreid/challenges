@@ -7,3 +7,36 @@ const palindrome = (str) => {
 };
 
 console.log(palindrome("anna"));
+
+function validatePalindromePermutation(string) {
+  const charMap = new Map();
+  const normStr = string.toLowerCase();
+  
+  for (let i = 0; i < normStr.length; i++) {
+    const char = normStr[i];
+    
+    if (char !== " ") {
+      if (charMap.has(char)) {
+        charMap.set(char, charMap.get(char) + 1);
+      } else {
+        charMap.set(char, 1);
+      }
+    }
+  }
+
+  let hasFoundOddFreq = false;
+
+  charMap.forEach((value) => {
+    if (value % 2 !== 0) {
+      if (hasFoundOddFreq) {
+        return false;
+      } else {
+        hasFoundOddFreq = true;
+      }
+    }
+  });
+
+  return true;
+}
+
+console.log("validate: ", validatePalindromePermutation("Tact Coa"))

@@ -1,13 +1,19 @@
  function areBracketsBalanced(expr) {
   let stack = [];
+  const balanceMap = new Map();
+  const openSet = new Set(['(', '[', '{']);
+  const closeSet = new Set([')', ']', '}']);
+
+  balanceMap.set('(', ')');
+  balanceMap.set('[', ']');
+  balanceMap.set('{', '}');
 
   // Traversing the Expression
   for(let i = 0; i < expr.length; i++) {
-    let x = expr[i];
+    let value = expr.charAt(i);
 
-    if (x == '(' || x == '[' || x == '{') {
-      // Push the element in the stack
-      stack.push(x);
+    if (openSet.has(value)) {
+      stack.push(value);
       continue;
     }
 
@@ -15,7 +21,7 @@
           
     let check;
     
-    switch (x) {
+    switch (value) {
       case ')':
         check = stack.pop();
         if (check == '{' || check == '[')
