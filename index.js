@@ -7,6 +7,7 @@ require('./findVowels');
 require('./fibonacci');
 require('./pangram');
 require('./reversals');
+require('./balanced');
 
 const dups = 'aawwefvlkjtjjtlkjttjtj';
 

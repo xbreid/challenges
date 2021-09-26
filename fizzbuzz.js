@@ -1,4 +1,4 @@
-const fizzBuzz = num => {
+const fizzBuzz = (num) => {
   for(let i = 1; i <= num; i++) {
     // check if the number is a multiple of 3 and 5
     if(i % 3 === 0 && i % 5 === 0) {
@@ -15,4 +15,22 @@ const fizzBuzz = num => {
   }
 }
 
-console.log(fizzBuzz(13));
+
+const fizzbuzzOpt = (value) => {
+  const fizzHash = {3: 'Fizz', 5: 'Buzz'};
+  
+  for (let i = 1; i <= value; i++) {
+    let output = '';
+
+    for (let num in fizzHash) {
+      if (i % num === 0) {
+        output += fizzHash[num]
+      }
+    }
+
+    if (output === '') { output = i };
+    console.log(output);
+  }
+}
+
+console.log(fizzbuzzOpt(19));
