@@ -11,5 +11,5 @@ const isAnagram = (str1, str2) => {
   return normalize(str1) === normalize(str2); // check to see if strings are equal
 };
 
-console.log(isAnagram("iceman", "cinema"));
-console.log(isAnagram("madam", "madam"));
+console.log('Anagram: ', isAnagram("iceman", "cinema"));
+// console.log(isAnagram("madam", "madam"));

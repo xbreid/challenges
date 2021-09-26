@@ -1,6 +1,6 @@
 const findVowels = (str) => {
   const matched = str.match(/[aeiou]/gi);
-  return matched ? matched.length : 0;
+  return matched;
 }
 
-console.log(findVowels('Hello old chap'));
+console.log('Vowels: ', findVowels('Hello old chap'));

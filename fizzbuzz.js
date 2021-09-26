@@ -15,4 +15,4 @@ const fizzBuzz = num => {
   }
 }
 
-console.log(fizzBuzz(18));
+console.log(fizzBuzz(13));
